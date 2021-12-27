@@ -3,7 +3,6 @@ package com.company;
 public abstract class Product {
     private int numberOrders;
     private String name;
-    private String filling;
     private int price;
     private int weight;
     private int number;
@@ -40,13 +39,6 @@ public abstract class Product {
         this.name = name;
     }
 
-    public String getFilling() {
-        return filling;
-    }
-
-    public void setFilling(String filling) {
-        this.filling = filling;
-    }
 
     public int getPrice() {
         return price;

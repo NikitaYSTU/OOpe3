@@ -11,7 +11,6 @@ public class Cash {
     private int orders = 0;
     private int max;
     private int min;
-    private String info = "";
     public void doCash(List<Product> list){
         list.forEach(new Consumer<Product>() {
             @Override
@@ -31,20 +30,14 @@ public class Cash {
                     }
                     earnedMoney += temp * product.getNumberOrders();
                     orders += product.getNumberOrders();
-                    info += "Прибыль с еденицы кофе " + product.getNumber() + ": " + temp + ", прибыль с партии: " + (temp * product.getNumberOrders() + "\n");
-                }
-                if (product.getClass() == Cake.class) {
-                    System.out.println(product.getName()+","+"вес: "+ product.getWeight()+ ", цена: "+ product.getPrice()+ ", начинка: "+ product.getFilling());
-                }
-                if (product.getClass() == Pie.class) {
-                    System.out.println(product.getName()+","+"вес: "+ product.getWeight()+ ", цена: "+ product.getPrice()+ ", начинка: "+ product.getFilling());
-                }
+                    product.getInfo();
+                } else product.getInfo();
             }
         });
         float average = (float)earnedMoney/(float)orders;
         System.out.printf("Самый прибыльный кофе: %d \n", max);
         System.out.printf("Самый малоприбыльный кофе: %d \n", min);
         System.out.printf("Средняя прибыль: %.2f \n", average);
-        System.out.println(info);
+
     }
 }
