@@ -1,6 +1,5 @@
 package com.company;
 
-import javax.xml.namespace.QName;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -11,27 +10,25 @@ public class Cash {
     private int orders = 0;
     private int max;
     private int min;
-    public void doCash(List<Product> list){
-        list.forEach(new Consumer<Product>() {
+    public void doCash(List<Coffee> list){
+        list.forEach(new Consumer<Coffee>() {
             @Override
-            public void accept(Product product) {
-                if (product.getClass() == Coffee.class) {
-                    int temp = product.getPrice() - ((Coffee) product).getBeanPrice() - ((Coffee) product).getWaterPrice();
+            public void accept(Coffee coffee) {
+                    int temp = coffee.getPrice() - ((Coffee) coffee).getBeanPrice() - ((Coffee) coffee).getWaterPrice();
                     if (maxPrice < temp) {
                         maxPrice = temp;
-                        max = product.getNumber();
+                        max = coffee.getNumber();
                     }
                     if (minPrice == 0) minPrice = temp;
                     else {
                         if (minPrice > temp) {
                             minPrice = temp;
-                            min = product.getNumber();
+                            min = coffee.getNumber();
                         }
                     }
-                    earnedMoney += temp * product.getNumberOrders();
-                    orders += product.getNumberOrders();
-                    product.getInfo();
-                } else product.getInfo();
+                    earnedMoney += temp * coffee.getNumberOrders();
+                    orders += coffee.getNumberOrders();
+
             }
         });
         float average = (float)earnedMoney/(float)orders;
@@ -39,5 +36,13 @@ public class Cash {
         System.out.printf("Самый малоприбыльный кофе: %d \n", min);
         System.out.printf("Средняя прибыль: %.2f \n", average);
 
+    }
+    public void printInfo(List<Product> list){
+        list.forEach(new Consumer<Product>() {
+            @Override
+            public void accept(Product product) {
+                System.out.println(product.getInfo());
+            }
+        });
     }
 }

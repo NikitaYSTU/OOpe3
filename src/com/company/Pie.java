@@ -12,7 +12,7 @@ public class Pie extends Product {
     }
 
     @Override
-            public void getInfo() {
-        System.out.println(this.getName() + "," + "вес: " + this.getWeight() + ", цена: " + this.getPrice() + ", начинка: " + this.getFilling());
+            public String getInfo() {
+        return (this.getName() + " " + "вес: " + this.getWeight() + ", цена: " + this.getPrice() + ", начинка: " + this.getFilling());
     }
 }

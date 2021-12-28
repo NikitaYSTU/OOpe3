@@ -7,6 +7,8 @@ public abstract class Product {
     private int weight;
     private int number;
 
+    public abstract String getInfo();
+
     public int getNumberOrders() {
         return numberOrders;
     }

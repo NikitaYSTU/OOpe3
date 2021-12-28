@@ -12,13 +12,13 @@ public class Main {
         coffees.add(cof2);
         coffees.add(cof3);
         List<Product> products =new ArrayList<>();
-        Product cake = new Cake();
+        Cake cake = new Cake();
         cake.setName("Тортик");
         cake.setPrice(250);
         cake.setWeight(600);
         cake.setFilling("Крем");
         products.add(cake);
-        Product pie = new Pie();
+        Pie pie = new Pie();
         pie.setName("Пирожок");
         pie.setPrice(50);
         pie.setWeight(100);
@@ -26,7 +26,7 @@ public class Main {
         products.add(pie);
         products.addAll(coffees);
         Cash cash = new Cash();
-        cash.doCash(products);
-
+        cash.doCash(coffees);
+        cash.printInfo(products);
     }
 }

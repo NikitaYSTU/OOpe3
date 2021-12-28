@@ -13,6 +13,11 @@ public class Coffee extends Product {
         return waterPrice;
     }
 
+    @Override
+    public String getInfo(){
+        int temp = this.getPrice() - this.getBeanPrice() - this.getWaterPrice();
+        return("Прибыль с еденицы кофе " + this.getNumber() + ": " + temp + ", прибыль с партии: " + (temp * this.getNumberOrders()));
+    }
 
     public Coffee (int price, int waterPrice, int beanPrice,
                    int numberOrders, int number  ){
