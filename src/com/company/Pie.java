@@ -11,7 +11,6 @@ public class Pie extends Product {
         this.filling = filling;
     }
 
-    @Override
             public String getInfo() {
         return (this.getName() + " " + "вес: " + this.getWeight() + ", цена: " + this.getPrice() + ", начинка: " + this.getFilling());
     }

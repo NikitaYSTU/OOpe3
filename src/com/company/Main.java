@@ -27,6 +27,12 @@ public class Main {
         products.addAll(coffees);
         Cash cash = new Cash();
         cash.doCash(coffees);
-        cash.printInfo(products);
+        Barista barista = new Barista();
+        barista.setName("Алексей");
+
+            List<Info>  ar = new ArrayList<>();
+        ar.addAll(products);
+        ar.add(barista);
+        cash.printInfo(ar);
     }
 }

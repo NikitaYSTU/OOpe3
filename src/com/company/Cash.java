@@ -37,11 +37,11 @@ public class Cash {
         System.out.printf("Средняя прибыль: %.2f \n", average);
 
     }
-    public void printInfo(List<Product> list){
-        list.forEach(new Consumer<Product>() {
+    public void printInfo(List<Info> list){
+        list.forEach(new Consumer<Info>() {
             @Override
-            public void accept(Product product) {
-                System.out.println(product.getInfo());
+            public void accept(Info o) {
+                System.out.println(o.getInfo());
             }
         });
     }

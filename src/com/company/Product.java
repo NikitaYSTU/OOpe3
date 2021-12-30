@@ -1,13 +1,11 @@
 package com.company;
 
-public abstract class Product {
+public abstract class Product extends Info{
     private int numberOrders;
     private String name;
     private int price;
     private int weight;
     private int number;
-
-    public abstract String getInfo();
 
     public int getNumberOrders() {
         return numberOrders;
