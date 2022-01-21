@@ -1,6 +1,6 @@
 package com.company;
 
-public class Cake  extends Product {
+public class Cake extends Product {
     private String filling;
     public String getFilling() {
         return filling;
@@ -14,5 +14,5 @@ public class Cake  extends Product {
         return(this.getName() + " " + "вес: " + this.getWeight() + ", цена: " + this.getPrice() + ", начинка: " + this.getFilling());
     }
 
-
+    public String getAnotherInfo(){return (" ");}
 }

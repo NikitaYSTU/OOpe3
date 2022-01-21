@@ -1,6 +1,6 @@
 package com.company;
 
-public abstract class Product extends Info{
+public abstract class Product implements Info{
     private int numberOrders;
     private String name;
     private int price;

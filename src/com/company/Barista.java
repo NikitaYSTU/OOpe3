@@ -1,6 +1,6 @@
 package com.company;
 
-public class Barista extends Info {
+public class Barista implements Info {
     private String name;
 
     public void setName(String name) {
@@ -10,4 +10,6 @@ public class Barista extends Info {
     public String getInfo() {
         return ("Бариста "+ name);
     }
+
+    public String getAnotherInfo(){return (" ");}
 }

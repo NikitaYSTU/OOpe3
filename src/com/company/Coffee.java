@@ -18,6 +18,11 @@ public class Coffee extends Product {
         return("Прибыль с еденицы кофе " + this.getNumber() + ": " + temp + ", прибыль с партии: " + (temp * this.getNumberOrders()));
     }
 
+    public String getAnotherInfo(){
+        return("Кофе " + getNumber() + ": стоимость - " + getPrice() + "\n");
+    }
+
+
     public Coffee (int price, int waterPrice, int beanPrice,
                    int numberOrders, int number  ){
         this.beanPrice = beanPrice;

@@ -1,5 +1,6 @@
 package com.company;
 
-public abstract class Info {
-    public abstract String getInfo();
+public interface Info {
+    String getInfo();
+    String getAnotherInfo();
 }

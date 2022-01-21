@@ -14,4 +14,5 @@ public class Pie extends Product {
             public String getInfo() {
         return (this.getName() + " " + "вес: " + this.getWeight() + ", цена: " + this.getPrice() + ", начинка: " + this.getFilling());
     }
+    public String getAnotherInfo(){return (" ");}
 }
