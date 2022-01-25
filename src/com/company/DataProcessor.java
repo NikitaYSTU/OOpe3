@@ -14,11 +14,11 @@ public class DataProcessor<T extends Product> {
         this.list = list;
     }
 
-    public List<T> sorting(int lowerRange, int upperRange) throws Exception {
+    public List<T> sorting(int lowerRange, int upperRange) throws ProcessingException {
         if (lowerRange > upperRange){
             lowerRangeValue = lowerRange;
             upperRangeValue = upperRange;
-            throw new Exception(lowerRange);
+            throw new ProcessingException(lowerRange);
         }
         return list.stream()
                 .filter(Product -> (Product.getPrice() >= lowerRange) && (Product.getPrice() <= upperRange))
@@ -34,9 +34,6 @@ public class DataProcessor<T extends Product> {
         Product Product = null;
         if (elementOptional.isPresent()) {
             Product = elementOptional.get();
-        }
-        else{
-            System.out.println("абонент не абонент");
         }
         return Product;
     }

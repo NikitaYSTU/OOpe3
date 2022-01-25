@@ -66,7 +66,7 @@ public class Main {
                 sortedList.append(element.getAnotherInfo());
             }
             System.out.println(sortedList);
-        } catch (Exception e) {
+        } catch (ProcessingException e) {
             System.out.println("Нижняя граница (" + e.getLower() + ") не может быть больше верхней ("
                     + ProductStream.upperRangeValue + ") !");
         }
@@ -77,19 +77,26 @@ public class Main {
         List<Product> matched = new ArrayList<>();
         matched.add(ProductStream.searching(14));
 
+        for (Info element : matched) {
+            if (element != null) {
+                searchedList.append(element.getAnotherInfo());
+            }
+            else{
+                System.out.println("абонент не абонент");
+            }
+        }
+
         System.out.println("\nПоиск по стоимости ===|||'''((({{{[[[15]]]}}})))'''|||===: ");
 
         List<Product> matching = new ArrayList<>();
         matching.add(ProductStream.searching(15));
 
-        for (Info element : matched) {
-            if (element != null) {
-                searchedList.append(element.getAnotherInfo());
-            }
-        }
         for (Info element : matching) {
             if (element != null) {
                 searchedList.append(element.getAnotherInfo());
+            }
+            else{
+                System.out.println("абонент не абонент");
             }
         }
 
